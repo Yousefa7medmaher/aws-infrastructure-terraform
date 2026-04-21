@@ -7,12 +7,14 @@ module "public_subnet" {
     source = "../../modules/network/subnet"
     vpc_id = module.vpc.vpc_id
     subnet_cidr = var.public_subnet_cidr 
+    az = var.az
 }
 
 module "private_subnet" {
     source = "../../modules/network/subnet"
     vpc_id = module.vpc.vpc_id
     subnet_cidr = var.private_subnet_cidr
+    az = var.az 
 }
 
 module "network" {
